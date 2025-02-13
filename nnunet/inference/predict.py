@@ -21,8 +21,8 @@ import numpy as np
 from batchgenerators.augmentations.utils import resize_segmentation
 from nnunet.inference.segmentation_export import save_segmentation_nifti_from_softmax, save_segmentation_nifti
 from batchgenerators.utilities.file_and_folder_operations import *
-import sys
-if 'win' in sys.platform:
+import platform
+if platform.system() == 'Windows':
     #fix for windows platform
     import pathos
     Process = pathos.helpers.mp.Process
